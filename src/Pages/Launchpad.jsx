@@ -1,32 +1,32 @@
-import React from "react";
 import launchimg from "../images/launchimg.png";
-import BaadGif from "../images/baad.gif";
-import CarrotGif from "../images/Carrot.gif";
+import gnarmint from "../images/MintGnar.png";
 import "./Launchpad.css";
 
 const Launchpad = () => {
   return (
     <div className="LaunchpadMain">
-
-<img className="launchimg"
+      <img className="launchimg"
           src={launchimg}
-          alt="launchimg"
-          ></img>
+          alt="launchimg">
+      </img>
 
-     <br></br>
-     <div className="Projects">
+      <br></br>
 
-      <div className="LaunchpadMain2">
-      <a href="https://baadgoats.vercel.app/">
+      <div className="Projects">
+
+      <div className="LaunchpadMain2" style={{paddingBottom: "500px"}}>
+      <a href="https://gnarafdao.vercel.app/">
         <img
-          className="BaadGif"
-          src={BaadGif}
-          alt="BaadGif"
+          className="gnarmint"
+          src={gnarmint}
+          alt="gnarmint"
       ></img>
-         <h3 style={{fontSize: "1.5em", color: "white", marginTop: "10px"}}>Mint Baad Goats</h3>
+         <h3 className="subtitle">Mint Gnar AF DAO Card</h3>
       </a>
       </div>
+      <h2 className="bottomtitle">More Projects Coming Soon!</h2>
       </div>
+
     </div>
   );
 };

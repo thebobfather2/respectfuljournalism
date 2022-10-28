@@ -1,4 +1,3 @@
-import React from "react";
 import BaadLogo3 from "../images/BaadLogo.png";
 import Discord0 from "../images/DiscordGray.png";
 import "./Baad.css";
@@ -14,16 +13,6 @@ const Baad = () => {
       padding: "50px" }}>Baad Goats</h1>
      
       <div className="BaadMain2">
-
-      <a href="https://baadgoats.vercel.app/">
-        <img
-          className="BaadLogo3"
-          src={BaadLogo3}
-          alt="BaadLogo3"
-      ></img>
-         
-        <h3 style={{color: "white"}}>Mint</h3>
-      </a>
 
       <a href="https://stake.cardinal.so/7CMdsPLuo23LXA7An2jh6At859n3PFWFFzfVAccd1wYu/">
         <img

@@ -30,11 +30,6 @@ const Partners = () => {
       path: "/GnarAFDAO",
     },
     {
-      name: "Baad Goats",
-      image: BaadLogo,
-      path: "/Baad",
-    },
-    {
       name: "Grouchy Tigers",
       image: grouchy,
       path: "/GrouchyTigers",
@@ -43,6 +38,11 @@ const Partners = () => {
       name: "Jack Tuber",
       image: jtlogo,
       path: "/JackTuber",
+    },
+    {
+      name: "Baad Goats",
+      image: BaadLogo,
+      path: "/Baad",
     },
 
   ];

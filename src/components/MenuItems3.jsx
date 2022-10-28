@@ -1,9 +1,4 @@
 export const MenuItems3 = [
-  {
-    title: "Edd Fox",
-    path: "/EddFox",
-    cName: "dropdown-link",
-  },
 
   {
     title: "24 Carrot Bunny Club",
@@ -12,14 +7,20 @@ export const MenuItems3 = [
   },
 
   {
-    title: "GnarAF DAO",
-    path: "/GnarAFDAO",
+    title: "Baad Goats",
+    path: "/Baad",
     cName: "dropdown-link",
   },
 
   {
-    title: "Baad Goats",
-    path: "/Baad",
+    title: "Edd Fox",
+    path: "/EddFox",
+    cName: "dropdown-link",
+  },
+
+  {
+    title: "GnarAF DAO",
+    path: "/GnarAFDAO",
     cName: "dropdown-link",
   },
   

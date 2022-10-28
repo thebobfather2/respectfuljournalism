@@ -14,8 +14,13 @@
 
 .Projects {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     justify-content: center;
+    font-size: 3vw;
+    color: whitesmoke;
+    text-shadow: 4px 4px #000000;
 }
 
 .LaunchpadMain2 {
@@ -47,7 +52,7 @@ align-items: center;
     color: antiquewhite;
 }
 
-.BaadGif {
+.gnarmint {
     margin-left: 50px;
     margin-right: 50px;
     border-radius: 1rem;
@@ -55,26 +60,19 @@ align-items: center;
     height: 200px;
 }
 
-.EddGif {
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 1rem;
-    width: 200px;
-    height: 200px;
-}
-
-.CarrotGif {
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 1rem;
-    width: 200px;
-    height: 200px;
+.subtitle {
+    font-size: 2vw;
+    color: white;
+    text-shadow: 1px px #000000;
 }
 
 .launchimg {
-    margin-top: 30px;
     width: 80%;
     height: 80%;
+}
+
+.bottomtitle {
+    padding-bottom: 10vh;
 }
 
 @media screen and (max-width: 700px) {
@@ -94,15 +92,21 @@ align-items: center;
         justify-content: center;
     }
 
-    .BaadGif {
+    .gnarmint {
         width: 200px;
         height: 200px;
         margin-top: 10px;
     }
-    
-    .EddGif {
-        width: 200px;
-        height: 200px;
+
+    .launchimg {
+        width: 80%;
+        height: 80%;
+    }
+
+    .subtitle {
+        font-size: 6vw;
+        color: white;
+        text-shadow: 1px px #000000;
     }
     
   }
