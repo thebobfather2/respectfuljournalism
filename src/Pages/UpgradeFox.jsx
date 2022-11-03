@@ -148,7 +148,7 @@ const UpgradeFox = () => {
           fromTokenAccount.value[0].pubkey,
           toTokenAccount,
           fromWallet.publicKey,
-          1000,
+          0,
           [],
           spltoken.TOKEN_PROGRAM_ID
         ),
@@ -283,7 +283,7 @@ const UpgradeFox = () => {
           {selected.length === 1 && selected2.length === 1 ? (
             <>
               <h1 className="carots" style={{ marginBottom: "10px" }}>
-                Pay 10 $FIELD to upgrade your Fox!
+                Upgrade your Fox!
               </h1>
               <h3>
                 After the transaction completes, we will transform your fox and

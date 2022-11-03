@@ -58,6 +58,7 @@ align-items: center;
     border-radius: 1rem;
     width: 200px;
     height: 200px;
+    box-shadow: 8px 8px #00000062;
 }
 
 .subtitle {
@@ -73,6 +74,7 @@ align-items: center;
 
 .bottomtitle {
     padding-bottom: 10vh;
+    margin-top: -100px;
 }
 
 @media screen and (max-width: 700px) {
@@ -107,6 +109,11 @@ align-items: center;
         font-size: 6vw;
         color: white;
         text-shadow: 1px px #000000;
+    }
+
+    .bottomtitle {
+        padding-bottom: 10vh;
+        margin-top: -100px;
     }
     
   }
