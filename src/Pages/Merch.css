@@ -1,0 +1,31 @@
+.MerchMain {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-family: 'Noto Serif', serif;
+    font-size: 6vh;
+    color: white;
+    text-shadow: 5px 5px #000000;
+    margin-top: 120px;
+}
+
+.MerchButton {
+    width: 300px;
+    height: 300px;
+}
+
+.Subtext {
+    color: white;
+    text-shadow: 1px 1px #000000;
+    font-size: 5vh;
+}
+
+@media screen and (max-width: 700px) {
+    .MerchMain {
+        font-size: 2vh;
+        text-shadow: 2px 2px #000000;
+    }
+}

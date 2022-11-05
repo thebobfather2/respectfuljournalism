@@ -43,6 +43,8 @@ import JackTuber from "./Pages/JackTuber";
 import FoxMart from "./Pages/FoxMart";
 import UpgradeFox from "./Pages/UpgradeFox";
 import GnarAFDAO from "./Pages/GnarAFDAO";
+import Events from "./Pages/Events";
+import Merch from "./Pages/Merch";
 
 
 require("./App.css");
@@ -136,6 +138,8 @@ const Content: FC = () => {
         <Route path="/UpgradeFox" element={<UpgradeFox />} />
         <Route path="/NftMinter" element={<NftMinter />} />
         <Route path="/GnarAFDAO" element={<GnarAFDAO />} />
+        <Route path="/Events" element={<Events />} />
+        <Route path="/Merch" element={<Merch />} />
       </Routes>
     </>
   );

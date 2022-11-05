@@ -1,41 +1,51 @@
 import { Link } from "react-router-dom";
-import Launch from "../images/launch.jpeg";
-import apply from "../images/apply.png";
+import partners from "../images/partnersbtn.png";
+import launchpad from "../images/launchbtn.png";
 import carot from "../images/carot.png";
+import travelbob from "../images/travelbob.png";
+import brcan from "../images/brcan.png";
+import merch from "../images/merch.png";
 import "./Landing.css";
 
 const Landing = () => {
   const buttons = [
     {
       name: "Partners",
-      image: carot,
+      image: partners,
       path: "/Partners",
-    },
-    {
-        name: "Launchpad",
-        image: carot,
-        path: "/Launchpad",
     },
     {
         name: "Games",
         image: carot,
-        path: "/GrouchyTigers",
+        path: "/Shop",
+    },
+    {
+        name: "Merch",
+        image: merch,
+        path: "/Merch",
     },
     {
       name: "Utilities",
-      image: carot,
+      image: brcan,
       path: "/Shop",
     },
     {
         name: "Events",
-        image: carot,
-        path: "/GrouchyTigers",
+        image: travelbob,
+        path: "/Events",
+    },
+    {
+        name: "Services",
+        image: launchpad,
+        path: "/Partners",
     },
 
   ];
   return (
-    <div className="LandingMain" style={{marginTop: "20px"}}>
-        <h1>Bobby Rabbits</h1>
+    <div className="LandingMain">
+        <div className="Title">
+            <h1>Bobby Rabbits</h1>
+        </div>
       <div className="buttonContainer">
         {buttons.map((button) => {
           return (

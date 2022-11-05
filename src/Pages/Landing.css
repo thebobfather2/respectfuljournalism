@@ -11,6 +11,10 @@
     text-shadow: 5px 5px #000000;
   }
   
+  .Title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
   .launchMain {
     min-height: 40vh;
     display: flex;
@@ -23,7 +27,7 @@
   .BulkTitle {
     display: flex;
     font-family: 'Badrips', sans-serif;
-    font-size: 4.5em;
+    font-size: 3.5em;
     text-align: center;
     justify-content: center;
     color: rgb(0, 0, 0);
@@ -39,12 +43,10 @@
     text-shadow: 3px 3px #000000;
 
   }
-  .button {
- 
-  
-  }
+
   .btnimg {
     border-radius: 20px;
+    min-width: 200px;
   }
   
   .buttonCard:hover {
@@ -59,11 +61,6 @@
   .apply {
     width: 100%;
     height: 100%;
-  }
-  
-  .partnerimg {
-    width: 70%;
-    height: 70%;
   }
   
   @media screen and (max-width: 700px) {

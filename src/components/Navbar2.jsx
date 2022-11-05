@@ -68,7 +68,7 @@ function Navbar() {
     <>
       <nav className="navbar">
 
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <Link to="/Landing" className="navbar-logo" onClick={closeMobileMenu}>
           <img src={Logo} className="navLogo" />
           <i class="fab fa-firstdraft" />
         </Link>
