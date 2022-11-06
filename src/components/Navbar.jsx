@@ -10,6 +10,7 @@ import br from "./img/poweredwhite.png";
 import Logo from "./img/poweredwhite.png";
 import MELogo from "./img/MELogo.png";
 import DiscordLogo from "./img/Discord.png";
+import bunnyhead from "../images/bunnyhead.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -37,7 +38,7 @@ const Navbar = () => {
     <nav>
       {toggleMenu || screenWidth > 755 ? (
         <>
-          <Link to="/">
+          <Link to="/Home">
             <img className="navlogo" src={br} alt="logo" />
           </Link>
           <ul className="list"close  style={{marginTop: "30px"}}>
@@ -46,20 +47,7 @@ const Navbar = () => {
 
 
 
-            <Link to="/Shop" onClick={toggleNav}>
-              <h1
-                style={{
-                  textDecoration: "underline",
-                  fontSize: "1.8em",
-                  color: "orange",
-                }}
-              >
-                Solana Tools
-              </h1>
-            </Link>
-            <br></br>
-
-            <Link to="/Shop" onClick={toggleNav}>
+            <Link to="/Utility" onClick={toggleNav}>
               <h1
                 style={{
                   textDecoration: "underline",
@@ -73,40 +61,27 @@ const Navbar = () => {
             <br></br>
 
             <a
-  href="https://staking.bobbyrabbits.com/"
-  rel="noreferrer"
-  onClick={toggleNav}
-  style={{
-    textDecoration: "underline",
-    fontSize: "1.8em",
-    color: "orange",
-  }}
->
-  <h1
-    style={{
-      textDecoration: "underline",
-      fontSize: "1em",
-      color: "orange",
-    }}
-  >
-    Staking
-  </h1>
-</a>
-<br></br>
-
-<Link to="/Launchpad" onClick={toggleNav}>
+              href="https://staking.bobbyrabbits.com/"
+              rel="noreferrer"
+              onClick={toggleNav}
+              style={{
+                textDecoration: "underline",
+                fontSize: "1.8em",
+                color: "orange",
+              }}
+            >
               <h1
                 style={{
                   textDecoration: "underline",
-                  fontSize: "1.8em",
+                  fontSize: "1em",
                   color: "orange",
                 }}
               >
-                Launchpad
+                Staking
               </h1>
-            </Link>
-            <br></br>
+            </a>
 
+            <br></br>
 
             <Link to="/Partners" onClick={toggleNav}>
               <h1
@@ -117,6 +92,32 @@ const Navbar = () => {
                 }}
               >
                 Partners
+              </h1>
+            </Link>
+            <br></br>
+
+            <Link to="/Services" onClick={toggleNav}>
+              <h1
+                style={{
+                  textDecoration: "underline",
+                  fontSize: "1.8em",
+                  color: "orange",
+                }}
+              >
+                Services
+              </h1>
+            </Link>
+            <br></br>
+
+            <Link to="/About" onClick={toggleNav}>
+              <h1
+                style={{
+                  textDecoration: "underline",
+                  fontSize: "1.8em",
+                  color: "orange",
+                }}
+              >
+                About
               </h1>
             </Link>
             <br></br>
@@ -134,7 +135,7 @@ const Navbar = () => {
             <br></br>
 
             <Link to="/" className="navbar-logo2" onClick={toggleNav}>
-          <img src={Logo} className="navLogo2" />
+          <img src={bunnyhead} className="MELogo" />
           <i class="fab fa-firstdraft" />
         </Link>
 

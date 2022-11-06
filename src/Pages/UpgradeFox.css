@@ -8,31 +8,46 @@
 }
 
 .title {
-    font-family: 'Fredoka One', cursive;
-    font-size: 4em;
+    color: #ffffff;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke: #000000;
+    -webkit-text-stroke-width: 2px;
+    text-shadow: 8px 8px #ff7c02;
+    font-family: 'DRIPINK PERSONAL USE', sans-serif;
+    font-size: 20vh;
     text-align: center;
 }
 
-.RabbitSelect {
-    min-width: 30%;
-    background-color: rgba(255, 255, 255, 0.315);
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .MainContainer {
+    min-width: 80%;
     display: flex;
     margin: auto;
     margin-top: 0;
     padding: 0 20px;
 }
 
-.rabbits {
+.traitSelect {
+    display: block;
+    align-self: center;
+    width: 80%;
+    min-width: 30%;
+    background-color: rgba(255, 255, 255, 0.315);
+    padding: 50px;
+    border-radius: 20px;
+    position: relative;
+    margin: 5px;
+}
+
+.Heading {
+    padding: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #000000;
+    text-shadow: 5px 5px #f5830098;
+    font-size: 5vh;
+}
+
+.traitGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 10px;
@@ -41,8 +56,8 @@
     padding-bottom: 20px;
 }
 
-.BobbyRabbits {
-    max-width: 100px;
+.traitIMG {
+    max-width: 150px;
     margin: auto;
 }
 
@@ -50,10 +65,9 @@
     align-items: center;
     position: relative;
     padding: 10px;
-    margin: 5px;
     width: fit-content;
     justify-content: center !important;
-    background-color: black !important;
+    background-color: rgba(211, 95, 0, 0.164) !important;
 }
 
 .images:hover {
@@ -63,8 +77,9 @@
 
 .Warning {
     position: absolute;
-    top: -20px;
+    top: 20px;
     right: 25px;
+    font-size: 2vw;
 }
 
 .clicked {
@@ -123,11 +138,15 @@
 
 @media screen and (max-width: 500px) {
     .title {
-        font-size: 2em;
+        font-size: 5.5em;
         text-align: center;
         margin-left: 2px;
         margin-right: 2px;
-        margin-top: -100px;
+        margin-top: -60px;
+    }
+
+    .Heading {
+        font-size: 4vh;
     }
 
     .completePurchase {
@@ -137,7 +156,7 @@
         max-width: 50%;
     }
 
-    .RabbitSelect {
+    .traitSelect {
         position: relative;
         margin-bottom: 20px;
         padding-bottom: 10px;
@@ -147,11 +166,12 @@
     }
 
     .MainContainer {
-        padding: 0;
+        padding-bottom: 10px;
     }
 
-    .BobbyRabbits {
-        max-width: 50px;
+    .traitIMG {
+        align-self: center;
+        max-width: 170px;
     }
 
     .transactionCarot {

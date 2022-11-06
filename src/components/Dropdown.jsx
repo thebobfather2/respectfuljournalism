@@ -14,6 +14,16 @@ function Dropdown() {
         onClick={handleClick}
         className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
       >
+
+        <li>
+          <a className="dropdown-link"
+          href="https://staking.bobbyrabbits.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          >
+            Staking
+          </a>
+        </li>
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>

@@ -9,9 +9,9 @@ import dashboardIcon from "../images/icons/dashboard.png";
 import galleryIcon from "../images/icons/gallery.png";
 import slotIcon from "../images/icons/slots.png";
 import walletIcon from "../images/icons/wallet.png";
-import "./Shop.css";
+import "./Utility.css";
 
-const Shop = () => {
+const Utility = () => {
   const items = [
     {
       id: "1",
@@ -89,32 +89,36 @@ const Shop = () => {
             <h2 className="menuSubtitle">The Carot Menu</h2>
           </div>
           <div className="TheMenu">
+
             <div className="Category">
+
               <div className="CategoryTitle">
                 <h2 className="CatTitle">Solana Tools</h2>
                 <div className="underline"></div>
               </div>
+
               <div className="menuItems">
+
                 <div className="items1">
                   <Link to="/BulkSend">
                     <h3 className="eachMenuItem">Bulk Send NFTs</h3>
                   </Link>
                   <h3 className="Prices">
-                    0.005 SOL/NFT or Free for Bobby Rabbits Holders
+                    0.005 SOL/NFT - FREE for Bobby Rabbits Holders
                   </h3>
                 </div>
                 <div className="itemsUnderline"></div>
+                
                 <div className="items1">
                   <Link to="/Cleaner">
                     <h3 className="eachMenuItem">Wallet Cleaner</h3>
                   </Link>
                   <h3 className="Prices">
-                    0.001 SOL/Burned NFT or Token Set or Free for Bobby Rabbits
-                    Holders
+                    0.001 SOL/Burned NFT or Token - FREE for Bobby Rabbits Holders
                   </h3>
                 </div>
                 <div className="itemsUnderline"></div>
-                <div className="itemsUnderline"></div>
+                
                 <div className="items1">
                   <Link to="/Gallery">
                     <h3 className="eachMenuItem">Gallery</h3>
@@ -122,21 +126,16 @@ const Shop = () => {
                   <h3 className="Prices">Free</h3>
                 </div>
                 <div className="itemsUnderline"></div>
+              
               </div>
             </div>
+            
             <div className="Category">
               <div className="CategoryTitle">
                 <h2 className="CatTitle">Rabbit Utility</h2>
                 <div className="underline"></div>
               </div>
               <div className="menuItems">
-                <div className="items1">
-                  <Link to="/Custom">
-                    <h3 className="eachMenuItem">Custom Bobby Rabbit</h3>
-                  </Link>
-                  <h3 className="Prices">3 OG Rabbits and 500 $CAROT Coin</h3>
-                </div>
-                <div className="itemsUnderline"></div>
                 <div className="items1">
                   <Link to="/Slots">
                     <h3 className="eachMenuItem">Slots</h3>
@@ -188,9 +187,9 @@ const Shop = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h3 className="eachMenuItem">Rabbit Staking</h3>
+                    <h3 className="eachMenuItem">Staking</h3>
                   </a>
-                  <h3 className="Prices">Stake your OG or Icy Rabbits</h3>
+                  <h3 className="Prices">Stake your NFTs to earn rewards</h3>
                 </div>
                 <div className="itemsUnderline"></div>
               </div>
@@ -217,4 +216,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Utility;

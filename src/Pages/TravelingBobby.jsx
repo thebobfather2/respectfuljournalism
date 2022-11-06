@@ -1,12 +1,12 @@
 import React from "react";
 import World from "../images/world.png";
-import "./TravelBob.css";
+import "./TravelingBobby.css";
 
-const TravelBob = () => {
+const TravelingBobby = () => {
   return (
  
     <div className="k24MainContainer">
-    <h1 style={{ marginTop: "30px" }} className="k24Title">Travelling Bobby</h1>
+    <h1 style={{ marginTop: "30px" }} className="k24Title">Traveling Bobby</h1>
     <div className="k24Main2">
       <img
         className="World"
@@ -19,4 +19,4 @@ const TravelBob = () => {
 );
 };
 
-export default TravelBob;
+export default TravelingBobby;
