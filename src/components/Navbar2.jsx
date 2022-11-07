@@ -68,7 +68,7 @@ function Navbar() {
     <>
       <nav className="navbar">
 
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <Link to="/Home" className="navbar-logo" onClick={closeMobileMenu}>
           <img src={Logo} className="navLogo" />
           <i class="fab fa-firstdraft" />
         </Link>
@@ -87,37 +87,24 @@ function Navbar() {
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
+        <li className="nav-item">
+            <Link
+              to="/Home"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Home <i className="fas fa-caret-down" />
+            </Link>
+          </li>
           <li
             className="nav-item"
             onMouseEnter={onMouseEnterTools}
             onMouseLeave={onMouseLeaveTools}
           >
-            <Link to="/Shop" className="nav-links" onClick={closeMobileMenu}>
-              Tools <i className="fas fa-caret-down" />
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnterUtils}
-            onMouseLeave={onMouseLeaveUtils}
-          >
-            <Link to="/Shop" className="nav-links" onClick={closeMobileMenu}>
+            <Link to="/Utility" className="nav-links" onClick={closeMobileMenu}>
               Utility <i className="fas fa-caret-down" />
             </Link>
-            {dropdown2 && <Dropdown2 />}
-          </li>
-
-          <li
-            className="nav-item"
-          >
-            <Link
-              to="/Launchpad"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Launchpad <i className="fas fa-caret-down" />
-            </Link>
+            {dropdown && <Dropdown />}
           </li>
 
           <li
@@ -135,6 +122,26 @@ function Navbar() {
             {dropdown3 && <Dropdown3 />}
           </li>
 
+          <li className="nav-item">
+            <Link
+              to="/Services"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Services <i className="fas fa-caret-down" />
+            </Link>
+          </li>
+
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnterUtils}
+            onMouseLeave={onMouseLeaveUtils}
+          >
+            <Link to="/About" className="nav-links" onClick={closeMobileMenu}>
+              About <i className="fas fa-caret-down" />
+            </Link>
+          </li>
+
         </ul>
         <WalletMultiButton/>
       </nav>
@@ -143,3 +150,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

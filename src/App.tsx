@@ -17,7 +17,9 @@ import React, { FC, ReactNode, useEffect, useMemo, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
-import Shop from "./components/Shop";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Utility from "./components/Utility";
 import Auctions from "./Pages/Auctions";
 import Baad from "./Pages/Baad";
 import BulkSend from "./Pages/BulkSend";
@@ -29,7 +31,7 @@ import Custom from "./Pages/Custom";
 import Dashboard from "./Pages/Dashboard";
 import EddFox from "./Pages/EddFox";
 import Gallery from "./Pages/Gallery";
-import Home from "./Pages/Home";
+import Welcome from "./Pages/Welcome";
 import NftMinter from "./Pages/NftMinter";
 import Partners from "./Pages/Partners";
 import Raffles from "./Pages/Raffles";
@@ -42,7 +44,10 @@ import JackTuber from "./Pages/JackTuber";
 import FoxMart from "./Pages/FoxMart";
 import UpgradeFox from "./Pages/UpgradeFox";
 import GnarAFDAO from "./Pages/GnarAFDAO";
-
+import Events from "./Pages/Events";
+import Merch from "./Pages/Merch";
+import Services from "./Pages/Services";
+import TravelingBobby from "./Pages/TravelingBobby";
 
 require("./App.css");
 require("@solana/wallet-adapter-react-ui/styles.css");
@@ -109,8 +114,10 @@ const Content: FC = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Shop" element={<Shop />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Utility" element={<Utility />} />
         <Route path="/Send" element={<Send />} />
         <Route path="/BulkSend" element={<BulkSend />} />
         <Route path="/Cleaner" element={<Cleaner />} />
@@ -134,6 +141,10 @@ const Content: FC = () => {
         <Route path="/UpgradeFox" element={<UpgradeFox />} />
         <Route path="/NftMinter" element={<NftMinter />} />
         <Route path="/GnarAFDAO" element={<GnarAFDAO />} />
+        <Route path="/Events" element={<Events />} />
+        <Route path="/Merch" element={<Merch />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/TravelingBobby" element={<TravelingBobby />} />
       </Routes>
     </>
   );

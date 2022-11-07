@@ -1,47 +1,103 @@
-.MainHomeContainer{
+.LandingMain {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    text-shadow: 8px 8px #ff7c02;
+    font-family: 'DRIPINK PERSONAL USE', sans-serif;
+    font-size: 15vh;
+    color: white;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke: #000000;
+    -webkit-text-stroke-width: 3px;
+  }
+  
+  .Title {
+    margin-top: 0px;
+    margin-bottom: -30px;
+  }
+
+  .subhead {
+    margin-top: 15px;
+    font-family: 'VTCBadDrip', sans-serif;
+    text-shadow: 5px 5px #000000;
+    -webkit-text-stroke: #000000;
+    -webkit-text-stroke-width: .5px;
+  }
+  
+  .launchMain {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .BulkTitle {
+    display: flex;
+    font-family: 'Badrips', sans-serif;
+    font-size: 3.5em;
+    text-align: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+  }
+  .buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 20px;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/carotshop.jpeg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    height: 100vh;
+    font-size: 5vh;
+    text-shadow: 3px 3px #000000;
+
   }
-  .EnterShop{
-    height: 80px;
-    width: 350px;
-    background: -webkit-linear-gradient(to right, #be8304, #c79409,#ec6409);  
-    background: linear-gradient(to right, #be8304, #c79409,#ec6409); 
-    animation: gradient 4s ease infinite;
-    background-size: 400% 400%; 
-    border-radius: 5px;
-    border: 2px white solid !important; 
-    box-shadow: 0 0 10px 5px rgb(233, 135, 7);
-    color: white !important;
+
+  .btnimg {
+    border-radius: 20px;
+    min-width: 200px;
   }
   
-  
-  @keyframes gradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
+  .buttonCard:hover {
+    cursor: pointer;
   }
-  @media screen and (max-width: 900px) {
-    .MainHomeContainer{
+  
+  .Launch {
+    width: 90%;
+    max-height: 70%;
+  }
+  
+  .apply {
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media screen and (max-width: 700px) {
+
+    .Title {
+      margin-top: 30px;
+      margin-bottom: -20px;
+      font-size: 5vh;
+    }
+
+    .LandingMain {
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        width: 100%;
+        text-align: center;
         align-items: center;
-        background-image: url('../images/carotshopcropped.png');
-        object-fit: scale-down;
-        height: 100vh;
+        font-family: 'VTCBadDrip', sans-serif;
+        font-size: 6.8vh;
+        color: white;
+        text-shadow: 5px 5px #000000;
       }
     
+    .Launch {
+      width: 80%;
+      height: 80%;
+    }
   }
