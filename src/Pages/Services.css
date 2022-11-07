@@ -167,6 +167,17 @@
     animation: gelatine ease .5s;
     text-shadow: 0 0 5px rgb(255, 255, 255);
   }
+  .footerText {
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 2px 2px #000000;
+    -webkit-text-stroke: #000000;
+    -webkit-text-stroke-width: .5px;
+    font-size: 1.5rem;
+    padding-bottom: 50px;
+  }
   @font-face {
     font-family: menuItems;
     src: url('../components/fonts/DkMidnightChalkerRegular-lGWV.otf');
@@ -432,5 +443,9 @@
 
     .Prices {
         font-size: 0.8em;
+    }
+    .footerText {
+      font-size: 1em;
+      padding-top: 10px;
     }
   }

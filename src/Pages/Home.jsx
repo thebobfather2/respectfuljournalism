@@ -17,7 +17,7 @@ const Home = () => {
     {
         name: "Games",
         image: carot,
-        path: "/Shop",
+        path: "/Utility",
     },
     {
         name: "Merch",
@@ -27,7 +27,7 @@ const Home = () => {
     {
       name: "Utilities",
       image: brcan,
-      path: "/Shop",
+      path: "/Utility",
     },
     {
         name: "Events",
