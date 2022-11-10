@@ -41,13 +41,13 @@ const Services = () => {
 
                     <div className="items1">
                         <h3 className="eachMenuItem">Prepare Metadata</h3>
-                        <h3 className="Prices">0.002 SOL/NFT</h3>
+                        <h3 className="Prices">0.004 SOL/NFT</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 
                     <div className="items1">
                         <h3 className="eachMenuItem">Configure & Upload</h3>
-                        <h3 className="Prices">0.002 SOL/NFT</h3>
+                        <h3 className="Prices">0.004 SOL/NFT</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 
@@ -60,19 +60,19 @@ const Services = () => {
 
                     <div className="items1">
                         <h3 className="eachMenuItem">Basic Mint Button + Hosting</h3>
-                        <h3 className="Prices">2 Solana</h3>
+                        <h3 className="Prices">4 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
                 
                     <div className="items1">
                         <h3 className="eachMenuItem">Custom Mint Page + Hosting</h3>
-                        <h3 className="Prices">10 Solana</h3>
+                        <h3 className="Prices">20 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 
                     <div className="items1">
                         <h3 className="eachMenuItem">+Crosmint Button (mint with credit card)</h3>
-                        <h3 className="Prices">+1 Solana</h3>
+                        <h3 className="Prices">+2 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 
@@ -89,31 +89,43 @@ const Services = () => {
                 <div className="menuItems">
                     <div className="items1">
                         <h3 className="eachMenuItem">Custom Fungible Tokens</h3>
-                        <h3 className="Prices">0.25 Solana Total</h3>
+                        <h3 className="Prices">0.5 Solana Total</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 
                     <div className="items1">
                         <h3 className="eachMenuItem">Stake Pool Setup</h3>
-                        <h3 className="Prices">1 Solana</h3>
+                        <h3 className="Prices">2 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 
                     <div className="items1">
                         <h3 className="eachMenuItem">Custom Staking Front End</h3>
-                        <h3 className="Prices">20 Solana</h3>
+                        <h3 className="Prices">30 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
                 
                     <div className="items1">
+                        <h3 className="eachMenuItem">Secondary Marketplace Setup</h3>
+                        <h3 className="Prices">10 Solana</h3>
+                    </div>
+                    <div className="itemsUnderline"></div>
+
+                    <div className="items1">
+                        <h3 className="eachMenuItem">Custom Marketplace Front End</h3>
+                        <h3 className="Prices">30 Solana</h3>
+                    </div>
+                    <div className="itemsUnderline"></div>
+
+                    <div className="items1">
                         <h3 className="eachMenuItem">Fungible Token Art/Metadata Update</h3>
-                        <h3 className="Prices">0.1 Solana</h3>
+                        <h3 className="Prices">0.2 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
                 
                     <div className="items1">
                         <h3 className="eachMenuItem">Stake Pool Updates</h3>
-                        <h3 className="Prices">0.25 Solana</h3>
+                        <h3 className="Prices">0.5 Solana</h3>
                     </div>
                     <div className="itemsUnderline"></div>
 

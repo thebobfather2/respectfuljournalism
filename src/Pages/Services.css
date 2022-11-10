@@ -175,7 +175,8 @@
     text-shadow: 2px 2px #000000;
     -webkit-text-stroke: #000000;
     -webkit-text-stroke-width: .5px;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding-top: 0px;
     padding-bottom: 50px;
   }
   @font-face {
