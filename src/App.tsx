@@ -48,6 +48,7 @@ import Events from "./Pages/Events";
 import Merch from "./Pages/Merch";
 import Services from "./Pages/Services";
 import TravelingBobby from "./Pages/TravelingBobby";
+import PityButton from "./Pages/PityButton";
 
 require("./App.css");
 require("@solana/wallet-adapter-react-ui/styles.css");
@@ -145,6 +146,7 @@ const Content: FC = () => {
         <Route path="/Merch" element={<Merch />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/TravelingBobby" element={<TravelingBobby />} />
+        <Route path="/PityButton" element={<PityButton />} />
       </Routes>
     </>
   );

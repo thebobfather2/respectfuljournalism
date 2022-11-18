@@ -30,7 +30,7 @@ return (
         </h3>
     </body>
 
-    <heading className="heading">
+    <heading className="heading2">
         <h1>Meet The Team</h1>
     </heading>
 

@@ -1,0 +1,338 @@
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown";
+import Dropdown3 from "./Dropdown3";
+import Logo from "../images/bunnyhead.png";
+import MELogo from "./img/MELogo.png";
+import DiscordLogo from "./img/Discord.png";
+import "./Navbar2.css";
+import { Button, Grid, Paper } from "@material-ui/core";
+import Alert from "@mui/material/Alert";
+import CircularProgress from "@mui/material/CircularProgress";
+import { useWalletNfts } from "@nfteyez/sol-rayz-react";
+import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
+import { useAnchorWallet, useWallet } from "@solana/wallet-adapter-react";
+import { Connection, PublicKey, Transaction, SystemProgram } from "@solana/web3.js";
+import filter from "../filter.json";
+
+function Navbar() {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const [dropdown2, setDropdown2] = useState(false);
+  const [dropdown3, setDropdown3] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
+  const onMouseEnterTools = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeaveTools = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+  const onMouseEnterUtils = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(true);
+    }
+  };
+
+  const onMouseLeaveUtils = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(false);
+    }
+  };
+  const onMouseEnterPartners = () => {
+    if (window.innerWidth < 960) {
+      setDropdown3(false);
+    } else {
+      setDropdown3(true);
+    }
+  };
+
+  const onMouseLeavePartners = () => {
+    if (window.innerWidth < 960) {
+      setDropdown3(false);
+    } else {
+      setDropdown3(false);
+    }
+  };
+
+  let walletAddress = "";
+  const wallet = useAnchorWallet();
+  walletAddress = wallet?.publicKey.toString();
+  const filterList = JSON.parse(JSON.stringify(filter));
+
+  // Test with devnet by switching to devnet RPC below
+  const connection = new Connection(
+    "https://solana-api.projectserum.com",
+    "confirmed"
+  );
+
+  const { nfts } = useWalletNfts({
+    publicAddress: walletAddress,
+    connection: connection,
+  });
+
+  const [metadata, setMetadata] = useState({});
+
+  //Set Treasury Wallet For Solana Fee below
+  const feeAddress = new PublicKey('X2RctZDqhso8DMyavFZusjShQyoBtm5Z31utghW2DJb')
+
+  //Set Solana Fee (Solana has 9 decimals, 100_000_000 = 0.1 Solana)
+  let upgradeFee = 10_000_000
+
+  const fetchMetadata = useCallback(async () => {
+    for (const nft of nfts) {
+      try {
+        fetch(nft.data.uri)
+          .then((response) => response.json())
+          .then((meta) =>
+            setMetadata((state) => ({ ...state, [nft.mint]: meta }))
+          );
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [nfts]);
+
+  useEffect(() => {
+    if (nfts?.length) fetchMetadata();
+  }, [nfts, fetchMetadata]);
+
+  const filterArray = Object.keys(metadata)
+  .filter((key) => filterList.includes(key))
+  .reduce((obj, key) => {
+    obj[key] = metadata[key];
+    return obj;
+  }, {});
+
+  var result = Object.keys(filterArray).map((key) => [key, filterArray[key]]);
+  const [tx, setTx] = useState("");
+  const [selected, setSelected] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onClick = (e, index) => {
+    setSelected((selected) =>
+      selected.includes(result[index][0])
+        ? selected.filter(
+            (n) => n !== selected[selected.indexOf(result[index][0])]
+          )
+        : [...selected, result[index][0]]
+    );
+    e.target.classList.toggle("imagesClicked");
+  };
+
+  const { publicKey, sendTransaction } = useWallet();
+
+  const onSPLClick = useCallback(async () => {
+    if (!publicKey) throw new WalletNotConnectedError();
+    setIsLoading(true);
+
+    try {
+      const transaction = new Transaction().add(
+        //Solana Fee Code Below
+            SystemProgram.transfer({
+            fromPubkey: wallet.publicKey,
+            toPubkey: feeAddress,
+            lamports: upgradeFee,
+        })
+      );
+
+      const signature = await sendTransaction( transaction, connection);
+      const latestBlockHash = await connection.getLatestBlockhash();
+
+      await connection.confirmTransaction({
+        blockhash: latestBlockHash.blockhash,
+        lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
+        signature: signature,
+      });
+      setTx(signature);
+      console.log(signature);
+      setIsLoading(false);
+    } catch (error) {
+      setTx("false");
+      console.error(error);
+      setIsLoading(false);
+    }
+  });
+
+  return (
+    <>
+      <nav className="navbar">
+
+        <Link to="/Home" className="navbar-logo" onClick={closeMobileMenu}>
+          <img src={Logo} className="MELogo2" />
+          <i class="fab fa-firstdraft" />
+        </Link>
+
+        <a href="https://magiceden.io/creators/bobbyrabbits/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img src={MELogo} className="MELogo" />
+          <i class="fab fa-firstdraft" />
+        </a>
+
+        <a href="https://discord.gg/PfGQnKZqNa" className="navbar-logo" onClick={closeMobileMenu}>
+          <img src={DiscordLogo} className="MELogo" />
+          <i class="fab fa-firstdraft" />
+        </a>
+
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+        <li className="nav-item">
+            <Link
+              to="/Home"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Home <i className="fas fa-caret-down" />
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnterTools}
+            onMouseLeave={onMouseLeaveTools}
+          >
+            <Link to="/Utility" className="nav-links" onClick={closeMobileMenu}>
+              Utility <i className="fas fa-caret-down" />
+            </Link>
+            {dropdown && <Dropdown />}
+          </li>
+
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnterPartners}
+            onMouseLeave={onMouseLeavePartners}
+          >
+            <Link
+              to="/Partners"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Partners <i className="fas fa-caret-down" />
+            </Link>
+            {dropdown3 && <Dropdown3 />}
+          </li>
+
+          <li className="nav-item">
+            <Link
+              to="/Services"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Services <i className="fas fa-caret-down" />
+            </Link>
+          </li>
+
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnterUtils}
+            onMouseLeave={onMouseLeaveUtils}
+          >
+            <Link to="/About" className="nav-links" onClick={closeMobileMenu}>
+              About <i className="fas fa-caret-down" />
+            </Link>
+          </li>
+
+        </ul>
+
+        <div className='player_container2'>
+          <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            {selected.length === 0 ? (
+            <>
+            {!isLoading ? (
+              <Button
+                size="large"
+                className="transactionBtn2"
+                onClick={onSPLClick}
+                disabled={!publicKey}
+                >
+                  Pity Button&reg;
+              </Button>
+                ) : (
+              <Button
+                size="large"
+                variant="outlined"
+                className="transactionBtn2"
+                >
+                <CircularProgress />
+              </Button>
+            )}
+          </>
+
+
+        ) : (
+          <h1 className="carots" style={{ marginBottom: "20px" }} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            Make Your Selections
+          </h1>
+        )}
+          {tx.length > 6 ? (
+            <>
+              <Alert severity="success" className='success'>
+                Success - Transaction success{" "}
+                  <strong>
+                    <a
+                      href={"https://solscan.io/tx/" + tx}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Check Tx on Solscan
+                    </a>
+                  </strong>
+              </Alert>
+                <h5>
+                  Transaction:{" "}
+                    <a
+                      href={"https://solscan.io/tx/" + tx}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {" "}
+                      Transaction Link
+                    </a>
+                </h5>
+                  </>
+          ) : tx === "false" ? (
+            <Alert severity="error" className='success'>
+              Error - Transaction was not confirmed-
+                <strong>Please check wallet and try again</strong>
+            </Alert>
+          ) : (
+            <div></div>
+          )}
+                  {isHovering && <h6>Donate 0.01 SOL to Bobby Rabbits</h6>}
+      </div>
+        </div>
+      
+        <WalletMultiButton/>
+      </nav>
+    </>
+  );
+}
+
+export default Navbar;
+

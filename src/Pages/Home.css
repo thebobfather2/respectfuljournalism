@@ -16,7 +16,7 @@
   
   .Title {
     margin-top: 0px;
-    margin-bottom: -30px;
+    margin-bottom: -40px;
   }
 
   .subhead {
@@ -44,6 +44,7 @@
     justify-content: center;
     color: rgb(0, 0, 0);
   }
+
   .buttonContainer {
     display: flex;
     flex-wrap: wrap;
@@ -58,7 +59,7 @@
 
   .btnimg {
     border-radius: 20px;
-    min-width: 200px;
+    min-width: 100px;
   }
   
   .buttonCard:hover {
@@ -94,7 +95,12 @@
         font-size: 6.8vh;
         color: white;
         text-shadow: 5px 5px #000000;
-      }
+    }
+
+    .btnimg {
+      border-radius: 20px;
+      min-width: 200px;
+    }
     
     .Launch {
       width: 80%;

@@ -2,6 +2,8 @@ import "./Merch.css";
 import merch from "../images/merch.png";
 
 const Merch = () => {
+  
+//API key here to be fetched
 
 return (
 

@@ -18,7 +18,7 @@ const UpgradeFox = () => {
   walletAddress = wallet?.publicKey.toString();
   const filterList = JSON.parse(JSON.stringify(filter));
   const connection = new Connection(
-    "https://solana-api.projectserum.com",
+    "https://api.mainnet-beta.solana.com",
     "confirmed"
   );
 
@@ -105,9 +105,9 @@ const UpgradeFox = () => {
       spltoken.ASSOCIATED_TOKEN_PROGRAM_ID
     );
 
-/*
-Swap with fee payer to add solana instead of field dee
-*/
+    /*
+    Swap with fee payer to add solana instead of field dee
+    */
     try {
       const transaction = new Transaction().add(
         spltoken.createTransferInstruction(
@@ -165,42 +165,42 @@ Swap with fee payer to add solana instead of field dee
         </h1>
       </div>
 
-    <div className='MainContainer'>
-      <div className="traitSelect">
-        <h2 className="Heading">
-          Choose a trait to upgrade:
-        </h2>
-          
-          {selected.length > 1 && (
-            <h2 className="Warning">
-              Please only select 1!
-            </h2>
-          )}
-          
-          <Grid container spacing={10}>
-            {result.map((nft, index) => {
-              return (
-                <Grid item key={index} md={6} lg={4}>
-                  <Paper className="images" elevation={8}>
-                    <img
-                      src={nft[1].image}
-                      className="traitIMG"
-                      alt="Fox Traits"
-                      onClick={(e) => onClick(e, index)}
-                    />
-                    {selected.includes(result[index][0]) && (
-                      <div className="clicked">
-                        <h1 className="selectedText">Selected</h1>
-                      </div>
-                    )}
-                  </Paper>
-                </Grid>
-              );
-            })}
-          </Grid>
-          <br></br>
-          <br></br>
-          <h1></h1>
+      <div className='MainContainer'>
+        <div className="traitSelect">
+          <h2 className="Heading">
+            Choose a trait to upgrade:
+          </h2>
+            
+            {selected.length > 1 && (
+              <h2 className="Warning">
+                Please only select 1!
+              </h2>
+            )}
+            
+            <Grid container spacing={10}>
+              {result.map((nft, index) => {
+                return (
+                  <Grid item key={index} md={6} lg={4}>
+                    <Paper className="images" elevation={8}>
+                      <img
+                        src={nft[1].image}
+                        className="traitIMG"
+                        alt="Fox Traits"
+                        onClick={(e) => onClick(e, index)}
+                      />
+                      {selected.includes(result[index][0]) && (
+                        <div className="clicked">
+                          <h1 className="selectedText">Selected</h1>
+                        </div>
+                      )}
+                    </Paper>
+                  </Grid>
+                );
+              })}
+            </Grid>
+            <br></br>
+            <br></br>
+            <h1></h1>
         </div>       
 
         <div className="completePurchase">
