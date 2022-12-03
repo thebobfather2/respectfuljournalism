@@ -34,7 +34,7 @@ const Gallery = () => {
   const wallet = useAnchorWallet();
   walletAddress = wallet?.publicKey.toString();
   const connection = new Connection(
-    "https://api.mainnet-beta.solana.com",
+    "https://rpc.ankr.com/solana",
     "confirmed"
   );
 

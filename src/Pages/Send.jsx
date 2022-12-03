@@ -16,7 +16,7 @@ const Send = () => {
   const [amount, setAmount] = useState("");
   const toSend = parseInt(amount);
   const connection = new Connection(
-    "https://solana-api.projectserum.com/",
+    "https://sol.getblock.io/48167756-ee21-45bb-b770-11d59c5ab160/mainnet/",
     "confirmed"
   );
   const fromWallet = wallet;

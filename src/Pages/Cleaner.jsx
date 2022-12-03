@@ -25,7 +25,7 @@ const Cleaner = () => {
 
   //set up solana connection with RPC and "confirmed" committment
   const connection = new Connection(
-    "https://solana-api.projectserum.com/",
+    "https://rpc.ankr.com/solana",
     "confirmed"
   );
 

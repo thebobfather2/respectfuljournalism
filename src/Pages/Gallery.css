@@ -16,7 +16,7 @@
 .walletSelect {
     width: 90%;
     border-radius: 20px;
-    color: white;
+    color: black;
     background-color: #FAD961;
     background-image: linear-gradient(123deg, #FAD961 0%, #F76B1C 100%);
     box-shadow: 0 0 8px black;
@@ -38,7 +38,7 @@
 }
 
 .mywallet {
-    color: white !important;
+    color: black !important;
     border: solid white !important;
     padding: 5px !important;
     margin-right: 15px !important;
@@ -51,7 +51,7 @@
     margin: auto 0 !important;
     width: 70%;
     margin-bottom: 30px !important;
-    color: white !important;
+    color: #000000 !important;
 }
 
 .gallery {
@@ -100,7 +100,7 @@
     background-color: orange;
     border-radius: 5px;
     box-shadow: 0 0 4px black;
-    color: white;
+    color: black;
     text-align: center;
     padding: 5px;
     width: fit-content;

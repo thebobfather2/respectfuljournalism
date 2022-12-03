@@ -34,7 +34,7 @@ const Dashboard = () => {
   //initialize walletAddress variable
   let walletAddress = "";
   const connection = new Connection(
-    "https://solana-api.projectserum.com/",
+    "https://sol.getblock.io/48167756-ee21-45bb-b770-11d59c5ab160/mainnet/",
     "confirmed"
   );
 

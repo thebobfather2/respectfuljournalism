@@ -66,10 +66,8 @@ const EddFox = () => {
       </div>
 
       <div className="EddBody2">
-          <h1 className="EddBody3">
-            Meet Reuben
-          </h1>
-          <img
+      
+      <img
             className="family"
             src={family}
             alt="family"
@@ -79,6 +77,11 @@ const EddFox = () => {
           />
 
           <div className="EddBody4" style={{ color: "white"}}>
+            
+          <h1 className="EddBody3">
+            Meet Reuben
+          </h1>
+          <p className="aboutReuben">
             Reuben Lacy, who holds a degree in industrial design from Auburn
             University, is a designer to his core. When he began to engage on a
             deeper level with the Bobby Rabbits, so many ideas and concepts were
@@ -95,6 +98,7 @@ const EddFox = () => {
             inspiration. He enjoys camping with his family and his favorite
             hobby is fishing, by any means necessary. Join the Discord and get
             to know him here:{" "}
+            </p>
             <a
               href="https://discord.gg/GQgN7kSDVn/"
               target="_blank"

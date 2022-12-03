@@ -122,6 +122,19 @@ const Navbar = () => {
             </Link>
             <br></br>
 
+            <Link to="/PityButton" onClick={toggleNav}>
+              <h1
+                style={{
+                  textDecoration: "underline",
+                  fontSize: "1.8em",
+                  color: "orange",
+                }}
+              >
+                Pity Button&#8482;
+              </h1>
+            </Link>
+            <br></br>
+
         <a href="https://magiceden.io/creators/bobbyrabbits/" style={{marginTop: "-10px"}} className="navbar-logo2" onClick={toggleNav}>
           <img src={MELogo} className="MELogo" />
           <i class="fab fa-firstdraft" />
@@ -156,7 +169,7 @@ const Navbar = () => {
       ) : (
         <nav className="nav">
           
-        <Link to="/" className="navbar-logo">
+        <Link to="/Home" className="navbar-logo">
           <img src={Logo} className="navLogo"/>
         </Link>
 
