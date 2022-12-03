@@ -18,7 +18,7 @@ const UpgradeFox = () => {
   walletAddress = wallet?.publicKey.toString();
   const filterList = JSON.parse(JSON.stringify(filter));
   const connection = new Connection(
-    "https://api.mainnet-beta.solana.com",
+    "https://sol.getblock.io/48167756-ee21-45bb-b770-11d59c5ab160/mainnet/",
     "confirmed"
   );
 

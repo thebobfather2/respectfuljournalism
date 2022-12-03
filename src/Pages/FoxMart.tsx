@@ -15,7 +15,7 @@ import "./CarotMarket.css";
 
 const FoxMart: React.FC = () => {
   const wallet = useAnchorWallet();
-  const RPC = "https://api.mainnet-beta.solana.com";
+  const RPC = "https://sol.getblock.io/48167756-ee21-45bb-b770-11d59c5ab160/mainnet/";
   const candyShopRef = useRef<CandyShop>(
     new CandyShop({
       candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS_FOX,
