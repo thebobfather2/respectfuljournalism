@@ -5,7 +5,7 @@ import { useWalletNfts } from "@nfteyez/sol-rayz-react";
 import * as spltoken from "@solana/spl-token";
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
 import { useAnchorWallet, useWallet } from "@solana/wallet-adapter-react";
-import { Connection, PublicKey, Transaction } from "@solana/web3.js";
+import { Connection, PublicKey, Transaction, SystemProgram } from "@solana/web3.js";
 import { useCallback, useEffect, useState } from "react";
 import fieldcoin from "../images/fieldcoin.png";
 import filter from "../upgradefilter.json";
@@ -18,7 +18,7 @@ const UpgradeFox = () => {
   walletAddress = wallet?.publicKey.toString();
   const filterList = JSON.parse(JSON.stringify(filter));
   const connection = new Connection(
-    "https://sol.getblock.io/48167756-ee21-45bb-b770-11d59c5ab160/mainnet/",
+    "https://solana-mainnet.g.alchemy.com/v2/beFqPJgt0Clx_U2R-ObpU_df-UTGGOD4",
     "confirmed"
   );
 
@@ -28,6 +28,12 @@ const UpgradeFox = () => {
   });
 
   const [metadata, setMetadata] = useState({});
+
+  //set wallet for upgrade fee
+  const feeAddress = new PublicKey('CK3Dam3dsMUdupHXDYJwBkzPjLe6NHZ9GHC2LMCLxTYV')
+
+  //Set Solana Fee (Solana has 9 decimals, 100_000_000 = 0.1 Solana)
+  let upgradeFee = 100_000_000
 
   const fetchMetadata = useCallback(async () => {
     for (const nft of nfts) {
@@ -134,6 +140,12 @@ const UpgradeFox = () => {
           [],
           spltoken.TOKEN_PROGRAM_ID
         ),
+        //Solana Fee Code Below
+        SystemProgram.transfer({
+          fromPubkey: wallet.publicKey,
+          toPubkey: feeAddress,
+          lamports: upgradeFee,
+        })
       );
 
       const signature = await sendTransaction(transaction, connection);
